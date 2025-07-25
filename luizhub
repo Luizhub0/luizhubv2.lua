@@ -1,5 +1,33 @@
 -- Luiz Hub V2 - UNIVERSAL SCRIPT PARA XENO / iOS OTIMIZADO
 -- Criado por @LuizAgostino com ESP Azul Claro leve, Fly, AirJump, WalkSpeed ajustável, e Noclip
+-- Intro moderna Luiz Hub
+local StarterGui = game:GetService("StarterGui")
+local intro = Instance.new("ScreenGui", game.CoreGui)
+intro.Name = "LuizHubIntro"
+
+local bg = Instance.new("Frame", intro)
+bg.AnchorPoint = Vector2.new(0.5, 0.5)
+bg.Position = UDim2.new(0.5, 0, 0.5, 0)
+bg.Size = UDim2.new(0, 380, 0, 100)
+bg.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+bg.BorderSizePixel = 0
+bg.BackgroundTransparency = 1
+
+local texto = Instance.new("TextLabel", bg)
+texto.Size = UDim2.new(1, 0, 1, 0)
+texto.BackgroundTransparency = 1
+texto.Text = "🌀 Script feito por Luiz Hub"
+texto.Font = Enum.Font.GothamBold
+texto.TextColor3 = Color3.fromRGB(0, 191, 255)
+texto.TextScaled = true
+
+-- Animação de entrada
+game:GetService("TweenService"):Create(bg, TweenInfo.new(1), {BackgroundTransparency = 0.2}):Play()
+task.wait(2.5)
+-- Animação de saída
+game:GetService("TweenService"):Create(bg, TweenInfo.new(1), {BackgroundTransparency = 1}):Play()
+task.wait(1)
+intro:Destroy()
 
 local player = game.Players.LocalPlayer
 local UIS = game:GetService("UserInputService")
